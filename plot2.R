@@ -6,6 +6,7 @@ originaldata <- read.table(filepath, sep=";", header = TRUE, na.strings = "?", c
 #--------------------------------------------------------------
 # Conversion of Date & Time
 #--------------------------------------------------------------
+
 data <- transform(originaldata, Date = as.Date(Date, format = "%d/%m/%Y"), Time = strptime(Time, format = "%H:%M:%S", tz = ""))
 
 #--------------------------------------------------------------
@@ -14,12 +15,14 @@ data <- transform(originaldata, Date = as.Date(Date, format = "%d/%m/%Y"), Time 
 data <- data[data$Date >= as.Date("01/02/2007", format = "%d/%m/%Y") ,]
 data <- data[data$Date <= as.Date("02/02/2007", format = "%d/%m/%Y") ,]
 head(data)
-summary(data)
 
+
+summary(data)
 #--------------------------------------------------------------
 # Plot 1
 #--------------------------------------------------------------
+
 hist(data$Global_active_power, col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
-dev.copy(png, file = "plot1.png")
+dev.copy(png, file = "Plot1.png")
 dev.off()
 

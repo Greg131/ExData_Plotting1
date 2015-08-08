@@ -23,8 +23,7 @@ summary(data)
 #--------------------------------------------------------------
 # Plot 1
 #--------------------------------------------------------------
+png(file = "plot1.png")  # 480 pixels and a height of 480 pixels are default values
 par(mfrow = c(1,1))
 hist(data$Global_active_power, col = "red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
-dev.copy(png, file = "plot1.png")
 dev.off()
-# 480 pixels and a height of 480 pixels are default values

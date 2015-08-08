@@ -24,11 +24,12 @@ summary(data)
 #--------------------------------------------------------------
 # Plot 3
 #--------------------------------------------------------------
+png(file = "plot3.png")  # 480 pixels and a height of 480 pixels are default values
+par(mfrow = c(1,1))
 plot(data$Time, data$Sub_metering_1, xlab = "", ylab = "Energy sub metering", type = "l" )
 lines(data$Time, data$Sub_metering_2, xlab = "", col = "red")
 lines(data$Time, data$Sub_metering_3, xlab = "", col = "blue")
 legend("topright", lty = 1, col = c("black","blue","red"), legend = c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"))
 
-dev.copy(png, file = "plot3.png")
+
 dev.off()
-# 480 pixels and a height of 480 pixels are default values

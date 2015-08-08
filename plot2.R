@@ -24,6 +24,8 @@ summary(data)
 #--------------------------------------------------------------
 # Plot 2
 #--------------------------------------------------------------
+png(file = "plot2.png")  # 480 pixels and a height of 480 pixels are default values
+par(mfrow = c(1,1))
 plot(data$Time, data$Global_active_power, xlab = "", ylab = "Global Active Power (kilowatts)", type = "l" )
-dev.copy(png, file = "plot2.png")
 dev.off()
+

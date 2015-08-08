@@ -24,6 +24,9 @@ summary(data)
 #--------------------------------------------------------------
 # Plots
 #--------------------------------------------------------------
+
+png(file = "plot4.png")  # 480 pixels and a height of 480 pixels are default values
+
 par(mfrow = c(2,2))
 par(mar = c(5.1,4.1,4.1,2.1)) # default [1] 5.1 4.1 4.1 2.1
 
@@ -37,14 +40,9 @@ plot(data$Time, data$Voltage, xlab = "datetime", ylab = "Voltage", type = "l" )
 plot(data$Time, data$Sub_metering_1, xlab = "", ylab = "Energy sub metering", type = "l" )
 lines(data$Time, data$Sub_metering_2, xlab = "", col = "red")
 lines(data$Time, data$Sub_metering_3, xlab = "", col = "blue")
-legend("topright", lty = 1, col = c("black","blue","red"), legend = c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"))
-
+legend("topright", lty = 1, col = c("black","blue","red"), legend = c("Sub_metering_1","Sub_metering_2", "Sub_metering_3"),bty = "n")
 # Plots 4
 plot(data$Time, data$Global_reactive_power, xlab = "datetime", ylab = "Global_reactive_power", type = "l" )
 
-dev.copy(png, file = "plot4.png")
 dev.off()
-# 480 pixels and a height of 480 pixels are default values
-
-#png(file = "plot4.pdf")
 

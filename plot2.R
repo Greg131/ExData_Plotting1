@@ -27,8 +27,3 @@ summary(data)
 plot(data$Time, data$Global_active_power, xlab = "", ylab = "Global Active Power (kilowatts)", type = "l" )
 dev.copy(png, file = "plot2.png")
 dev.off()
-
-
-?plot
-?dev.copy
-# 480 pixels and a height of 480 pixels
